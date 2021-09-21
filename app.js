@@ -1,11 +1,11 @@
-var express = require('express');
+const express = require('express');
 
-var logger = require('morgan');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
-var app = express();
+const indexRouter = require('./src/routes/index');
+const usersRouter = require('./src/routes/users');
+require('./src/db/db');
+const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
