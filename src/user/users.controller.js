@@ -45,6 +45,7 @@ module.exports.register = async (req, res) => {
         const user = await userService.createUser(body);
         const userObj = JSON.parse(JSON.stringify(user));
         delete userObj.password;
+        console.log(process.env.JWT_SECRET);
 
         const token = await jwt.sign(
             {
